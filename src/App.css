@@ -1,0 +1,139 @@
+.app-shell {
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(30, 64, 175, 0.2), transparent 55%),
+    var(--page-bg);
+}
+
+.app-main {
+  width: min(1200px, 100%);
+  min-height: calc(100vh - 76px);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 22, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.navbar {
+  width: min(1200px, 100%);
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.navbar-mark {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 0.75rem;
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--accent);
+  font-family: ui-monospace, monospace;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.navbar-link {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.65rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.navbar-link:hover,
+.navbar-link.is-active {
+  border-color: rgba(56, 189, 248, 0.2);
+  background: rgba(14, 165, 233, 0.1);
+  color: #e0f2fe;
+}
+
+.app-main h1 {
+  margin: 0 0 1.5rem;
+  color: #f8fafc;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.app-main h2,
+.app-main h3,
+.app-main h4 {
+  color: #f1f5f9;
+}
+
+.app-main section + section {
+  margin-top: 2.5rem;
+}
+
+.app-main a {
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    scrollbar-width: thin;
+  }
+
+  .navbar-link {
+    flex: 0 0 auto;
+  }
+
+  .app-main {
+    min-height: calc(100vh - 112px);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding: 1.25rem 1rem;
+  }
+}
